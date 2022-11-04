@@ -8,13 +8,13 @@ export class UserController {
 
   @Get()
   async getAllUsers() {
-    return this.userService.findMany({});
+    return await this.userService.findMany({});
   }
 
   @Post()
   async createUser(@Body() body: CreateUserDTO) {
     const { id, name, email } = body;
-    return this.userService.create({
+    return await this.userService.create({
       data: {
         id,
         email,
