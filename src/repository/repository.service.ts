@@ -13,53 +13,25 @@ export abstract class RepositoryService<
     return this.delegate;
   }
 
-  public async aggregate(data: T['aggregate']): Promise<T['aggregateReturn']> {
-    return this.delegate.aggregate(data);
+  public async create(args: T['create']): Promise<T['createReturn']> {
+    return this.delegate.create(args);
   }
 
-  public async count(data: T['count']): Promise<T['countReturn']> {
-    return this.delegate.count(data);
+  public async delete(args: T['delete']): Promise<T['deleteReturn']> {
+    return this.delegate.delete(args);
   }
 
-  public async create(data: T['create']): Promise<T['createReturn']> {
-    return this.delegate.create(data);
-  }
-
-  public async delete(data: T['delete']): Promise<T['deleteReturn']> {
-    return this.delegate.delete(data);
-  }
-
-  public async deleteMany(
-    data: T['deleteMany'],
-  ): Promise<T['deleteManyReturn']> {
-    return this.delegate.deleteMany(data);
-  }
-
-  public async findFirst(data: T['findFirst']): Promise<T['findFirstReturn']> {
-    return this.delegate.findFirst(data);
-  }
-
-  public async findMany(data: T['findMany']): Promise<T['findManyReturn']> {
-    return this.delegate.findMany(data);
+  public async findMany(args: T['findMany']): Promise<T['findManyReturn']> {
+    return this.delegate.findMany(args);
   }
 
   public async findUnique(
-    data: T['findUnique'],
+    args: T['findUnique'],
   ): Promise<T['findUniqueReturn']> {
-    return this.delegate.findUnique(data);
+    return this.delegate.findUnique(args);
   }
 
-  public async update(data: T['update']): Promise<T['updateReturn']> {
-    return this.delegate.update(data);
-  }
-
-  public async updateMany(
-    data: T['updateMany'],
-  ): Promise<T['updateManyReturn']> {
-    return this.delegate.updateMany(data);
-  }
-
-  public async upsert(data: T['upsert']): Promise<T['upsertReturn']> {
-    return this.delegate.upsert(data);
+  public async update(args: T['update']): Promise<T['updateReturn']> {
+    return this.delegate.update(args);
   }
 }
